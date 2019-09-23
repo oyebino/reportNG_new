@@ -63,14 +63,14 @@ function viewmore(e) {
   // url = str.split(";")
   document.getElementById("preview-bg").style.width = "100%";
   url_index = 0;
-  url = e.target.attributes["data-preview"]['value'].split(";")
+  url = e.target.attributes["data-preview"]['value'].split("%%")
   document.getElementById("preview-img").src = url[url_index]
   url.forEach(function(val){
 	var str=val.split("/")[val.split("/").length-1].split(".")[0]
 	console.log(str)
 	title.push(str)
 	})
-	document.getElementById("preview-title").innerText  = title[url_index]
+//	document.getElementById("preview-title").innerText  = title[url_index]
 }
 
 function move(number) {
@@ -79,7 +79,7 @@ function move(number) {
     document.getElementById("preview-img").style.width = "0%";
     setTimeout(() => {
       document.getElementById("preview-img").src = url[url_index]
-	  document.getElementById("preview-title").innerText  = title[url_index]
+//	  document.getElementById("preview-title").innerText  = title[url_index]
       document.getElementById("preview-img").style.width = "100%";
     }, 300);
   }
